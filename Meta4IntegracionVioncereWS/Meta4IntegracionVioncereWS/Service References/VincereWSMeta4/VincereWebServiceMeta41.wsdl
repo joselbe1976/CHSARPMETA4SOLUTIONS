@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://vincere.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://vincere.com" targetNamespace="http://vincere.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://vincere.com">
+      <xsd:element name="meta4GetInfoUserApp">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetInfoUserAppResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4GetInfoUserAppReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4ControlSession">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4ControlSessionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4ControlSessionReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetFichaEmpleado">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="IdEmpleadoMeta4" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetFichaEmpleadoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4GetFichaEmpleadoReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetListaEmpleados">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="filters" type="xsd:string" />
+            <xsd:element name="paginaDatos" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetListaEmpleadosResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4GetListaEmpleadosReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4Logout">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4LogoutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4LogoutReturn" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4AddFavoriteRh">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="IdEmpleadoMeta4" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4AddFavoriteRhResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4AddFavoriteRhReturn" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4DelFavoriteRh">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="IdEmpleadoMeta4" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4DelFavoriteRhResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4DelFavoriteRhReturn" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4DelFileUser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="OrdinalFile" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4DelFileUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4DelFileUserReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4SaveFileLeido">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="OrdinalFile" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4SaveFileLeidoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4SaveFileLeidoReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetListaFilesUser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="OrdinalFile" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetListaFilesUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4GetListaFilesUserReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetRealFileUser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="OrdinalFile" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetRealFileUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4GetRealFileUserReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4DelNotificacion">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="OrdinalNotificacion" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4DelNotificacionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4DelNotificacionReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4SaveNotificacionLeida">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="OrdinalNotificacion" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4SaveNotificacionLeidaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4SaveNotificacionLeidaReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetListaNotificaciones">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Meta4SessionId" type="xsd:string" />
+            <xsd:element name="User" type="xsd:string" />
+            <xsd:element name="Base64Password" type="xsd:string" />
+            <xsd:element name="UUID" type="xsd:string" />
+            <xsd:element name="Dispositivo" type="xsd:string" />
+            <xsd:element name="OrdinalNotificacion" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="meta4GetListaNotificacionesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="meta4GetListaNotificacionesReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="meta4GetListaEmpleadosResponse">
+    <wsdl:part name="parameters" element="impl:meta4GetListaEmpleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4DelFavoriteRhRequest">
+    <wsdl:part name="parameters" element="impl:meta4DelFavoriteRh" />
+  </wsdl:message>
+  <wsdl:message name="meta4LogoutRequest">
+    <wsdl:part name="parameters" element="impl:meta4Logout" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetFichaEmpleadoResponse">
+    <wsdl:part name="parameters" element="impl:meta4GetFichaEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4DelFileUserRequest">
+    <wsdl:part name="parameters" element="impl:meta4DelFileUser" />
+  </wsdl:message>
+  <wsdl:message name="meta4SaveNotificacionLeidaResponse">
+    <wsdl:part name="parameters" element="impl:meta4SaveNotificacionLeidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetRealFileUserResponse">
+    <wsdl:part name="parameters" element="impl:meta4GetRealFileUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4ControlSessionRequest">
+    <wsdl:part name="parameters" element="impl:meta4ControlSession" />
+  </wsdl:message>
+  <wsdl:message name="meta4DelNotificacionRequest">
+    <wsdl:part name="parameters" element="impl:meta4DelNotificacion" />
+  </wsdl:message>
+  <wsdl:message name="meta4ControlSessionResponse">
+    <wsdl:part name="parameters" element="impl:meta4ControlSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetListaEmpleadosRequest">
+    <wsdl:part name="parameters" element="impl:meta4GetListaEmpleados" />
+  </wsdl:message>
+  <wsdl:message name="meta4AddFavoriteRhRequest">
+    <wsdl:part name="parameters" element="impl:meta4AddFavoriteRh" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetInfoUserAppResponse">
+    <wsdl:part name="parameters" element="impl:meta4GetInfoUserAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4DelFileUserResponse">
+    <wsdl:part name="parameters" element="impl:meta4DelFileUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetListaFilesUserRequest">
+    <wsdl:part name="parameters" element="impl:meta4GetListaFilesUser" />
+  </wsdl:message>
+  <wsdl:message name="meta4AddFavoriteRhResponse">
+    <wsdl:part name="parameters" element="impl:meta4AddFavoriteRhResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetListaNotificacionesResponse">
+    <wsdl:part name="parameters" element="impl:meta4GetListaNotificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4LogoutResponse">
+    <wsdl:part name="parameters" element="impl:meta4LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4SaveNotificacionLeidaRequest">
+    <wsdl:part name="parameters" element="impl:meta4SaveNotificacionLeida" />
+  </wsdl:message>
+  <wsdl:message name="meta4DelFavoriteRhResponse">
+    <wsdl:part name="parameters" element="impl:meta4DelFavoriteRhResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4SaveFileLeidoRequest">
+    <wsdl:part name="parameters" element="impl:meta4SaveFileLeido" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetInfoUserAppRequest">
+    <wsdl:part name="parameters" element="impl:meta4GetInfoUserApp" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetRealFileUserRequest">
+    <wsdl:part name="parameters" element="impl:meta4GetRealFileUser" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetListaFilesUserResponse">
+    <wsdl:part name="parameters" element="impl:meta4GetListaFilesUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetListaNotificacionesRequest">
+    <wsdl:part name="parameters" element="impl:meta4GetListaNotificaciones" />
+  </wsdl:message>
+  <wsdl:message name="meta4DelNotificacionResponse">
+    <wsdl:part name="parameters" element="impl:meta4DelNotificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="meta4GetFichaEmpleadoRequest">
+    <wsdl:part name="parameters" element="impl:meta4GetFichaEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="meta4SaveFileLeidoResponse">
+    <wsdl:part name="parameters" element="impl:meta4SaveFileLeidoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VincereWebServiceMeta4">
+    <wsdl:operation name="meta4GetInfoUserApp">
+      <wsdl:input name="meta4GetInfoUserAppRequest" message="impl:meta4GetInfoUserAppRequest" />
+      <wsdl:output name="meta4GetInfoUserAppResponse" message="impl:meta4GetInfoUserAppResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4ControlSession">
+      <wsdl:input name="meta4ControlSessionRequest" message="impl:meta4ControlSessionRequest" />
+      <wsdl:output name="meta4ControlSessionResponse" message="impl:meta4ControlSessionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetFichaEmpleado">
+      <wsdl:input name="meta4GetFichaEmpleadoRequest" message="impl:meta4GetFichaEmpleadoRequest" />
+      <wsdl:output name="meta4GetFichaEmpleadoResponse" message="impl:meta4GetFichaEmpleadoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetListaEmpleados">
+      <wsdl:input name="meta4GetListaEmpleadosRequest" message="impl:meta4GetListaEmpleadosRequest" />
+      <wsdl:output name="meta4GetListaEmpleadosResponse" message="impl:meta4GetListaEmpleadosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4Logout">
+      <wsdl:input name="meta4LogoutRequest" message="impl:meta4LogoutRequest" />
+      <wsdl:output name="meta4LogoutResponse" message="impl:meta4LogoutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4AddFavoriteRh">
+      <wsdl:input name="meta4AddFavoriteRhRequest" message="impl:meta4AddFavoriteRhRequest" />
+      <wsdl:output name="meta4AddFavoriteRhResponse" message="impl:meta4AddFavoriteRhResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4DelFavoriteRh">
+      <wsdl:input name="meta4DelFavoriteRhRequest" message="impl:meta4DelFavoriteRhRequest" />
+      <wsdl:output name="meta4DelFavoriteRhResponse" message="impl:meta4DelFavoriteRhResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4DelFileUser">
+      <wsdl:input name="meta4DelFileUserRequest" message="impl:meta4DelFileUserRequest" />
+      <wsdl:output name="meta4DelFileUserResponse" message="impl:meta4DelFileUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4SaveFileLeido">
+      <wsdl:input name="meta4SaveFileLeidoRequest" message="impl:meta4SaveFileLeidoRequest" />
+      <wsdl:output name="meta4SaveFileLeidoResponse" message="impl:meta4SaveFileLeidoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetListaFilesUser">
+      <wsdl:input name="meta4GetListaFilesUserRequest" message="impl:meta4GetListaFilesUserRequest" />
+      <wsdl:output name="meta4GetListaFilesUserResponse" message="impl:meta4GetListaFilesUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetRealFileUser">
+      <wsdl:input name="meta4GetRealFileUserRequest" message="impl:meta4GetRealFileUserRequest" />
+      <wsdl:output name="meta4GetRealFileUserResponse" message="impl:meta4GetRealFileUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4DelNotificacion">
+      <wsdl:input name="meta4DelNotificacionRequest" message="impl:meta4DelNotificacionRequest" />
+      <wsdl:output name="meta4DelNotificacionResponse" message="impl:meta4DelNotificacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4SaveNotificacionLeida">
+      <wsdl:input name="meta4SaveNotificacionLeidaRequest" message="impl:meta4SaveNotificacionLeidaRequest" />
+      <wsdl:output name="meta4SaveNotificacionLeidaResponse" message="impl:meta4SaveNotificacionLeidaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetListaNotificaciones">
+      <wsdl:input name="meta4GetListaNotificacionesRequest" message="impl:meta4GetListaNotificacionesRequest" />
+      <wsdl:output name="meta4GetListaNotificacionesResponse" message="impl:meta4GetListaNotificacionesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VincereWebServiceMeta4SoapBinding" type="impl:VincereWebServiceMeta4">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="meta4GetInfoUserApp">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4GetInfoUserAppRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4GetInfoUserAppResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4ControlSession">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4ControlSessionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4ControlSessionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetFichaEmpleado">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4GetFichaEmpleadoRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4GetFichaEmpleadoResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetListaEmpleados">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4GetListaEmpleadosRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4GetListaEmpleadosResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4Logout">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4LogoutRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4LogoutResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4AddFavoriteRh">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4AddFavoriteRhRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4AddFavoriteRhResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4DelFavoriteRh">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4DelFavoriteRhRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4DelFavoriteRhResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4DelFileUser">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4DelFileUserRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4DelFileUserResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4SaveFileLeido">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4SaveFileLeidoRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4SaveFileLeidoResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetListaFilesUser">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4GetListaFilesUserRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4GetListaFilesUserResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetRealFileUser">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4GetRealFileUserRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4GetRealFileUserResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4DelNotificacion">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4DelNotificacionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4DelNotificacionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4SaveNotificacionLeida">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4SaveNotificacionLeidaRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4SaveNotificacionLeidaResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meta4GetListaNotificaciones">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meta4GetListaNotificacionesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meta4GetListaNotificacionesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VincereWebServiceMeta4Service">
+    <wsdl:port name="VincereWebServiceMeta4" binding="impl:VincereWebServiceMeta4SoapBinding">
+      <wsdlsoap:address location="http://mobilemeta4.zapto.org:8200/VincereWebServiceMeta4Apps/services/VincereWebServiceMeta4" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
